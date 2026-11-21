@@ -25,91 +25,8 @@
   --zen-title-weight: 800;
   --zen-title-tracking: -0.02em;
   --zen-max: 66rem;
-}
-
-[data-zen-theme='editorial'] [data-zen-area='hero'] {
-  text-align: center;
-  align-items: center;
-  border-top: 4px double var(--foreground);
-  border-bottom: 1px solid var(--foreground);
-  padding-block: 2.5rem;
-}
-[data-zen-theme='editorial'] [data-zen-subtitle] {
-  font-style: italic;
-}
-[data-zen-theme='editorial'] [data-zen-quote] {
-  border-left: 0;
-  border-block: 1px solid var(--foreground);
-  padding: 1rem 0;
-  text-align: center;
-  font-size: 1.5rem;
-}
-[data-zen-theme='editorial']
-  [data-zen-area='essay']
-  [data-slot='card-content']
-  > p:first-child::first-letter {
-  float: left;
-  font-family: var(--font-display);
-  font-size: 4rem;
-  line-height: 0.8;
-  padding: 0.3rem 0.5rem 0 0;
-  color: var(--primary);
-}
-
-[data-zen-theme='editorial'] [data-slot='card'] {
-  background: transparent;
-  border: 0;
-  border-top: 2px solid var(--foreground);
-  box-shadow: none;
-  padding-top: 1rem;
-}
-[data-zen-theme='editorial'] [data-slot='card-title'] {
-  font-family: var(--font-display);
-  font-weight: 700;
-}
-[data-zen-theme='editorial'] [data-slot='card-description'] {
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.7rem;
-}
-[data-zen-theme='editorial'] [data-slot='badge'] {
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.65rem;
-}
-[data-zen-theme='editorial'] [data-slot='button'] {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.75rem;
-  box-shadow: none;
-}
-[data-zen-theme='editorial'] [data-slot='input'] {
-  background: transparent;
-  border-width: 0 0 1px;
-  box-shadow: none;
-}
-[data-zen-theme='editorial'] [data-slot='tabs-list'] {
-  background: transparent;
-  border-bottom: 1px solid var(--border);
-  padding: 0;
-  width: 100%;
-  justify-content: flex-start;
-  gap: 1.25rem;
-}
-[data-zen-theme='editorial'] [data-slot='tabs-trigger'] {
-  flex: none;
-  padding-inline: 0;
-  border-radius: 0;
-  font-style: italic;
-}
-[data-zen-theme='editorial'] [data-slot='tabs-trigger'][data-state='active'] {
-  background: transparent;
-  box-shadow: none;
-  border-bottom: 2px solid var(--primary);
-}
-[data-zen-theme='editorial'] [data-slot='switch'],
-[data-zen-theme='editorial'] [data-slot='switch-thumb'] {
-  border-radius: 0;
+  --shadow-xs: none;
+  --shadow-sm: none;
 }
 
 @media (min-width: 64rem) {
@@ -119,10 +36,5 @@
       'hero hero hero'
       'essay essay sidebar'
       'controls controls sidebar';
-    column-gap: 3rem;
-  }
-  [data-zen-theme='editorial'] [data-zen-area='sidebar'] {
-    border-left: 1px solid var(--border);
-    padding-left: 2rem;
   }
 }

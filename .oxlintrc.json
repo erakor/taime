@@ -1,0 +1,13 @@
+{
+  "extends": ["./node_modules/@erakor/toolchain/oxlint/react.json"],
+  "ignorePatterns": ["dist/", "storybook-static/"],
+  "rules": {},
+  "overrides": [
+    {
+      "files": ["src/components/ZenCanvas.tsx"],
+      "rules": {
+        "jsx-a11y/label-has-associated-control": "off"
+      }
+    }
+  ]
+}

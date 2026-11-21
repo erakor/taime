@@ -12,7 +12,14 @@ import { ArrowRight, Sparkles } from 'lucide-react'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -39,8 +46,8 @@ export function ZenCanvas() {
           </div>
           <h1 data-zen-title>The Zen Garden, rebuilt in components.</h1>
           <p data-zen-subtitle>
-            A single static React tree, restyled end to end by nothing but a stylesheet: colour, type, radius, shadow,
-            component slots and the grid itself.
+            A single static React tree, restyled end to end by nothing but a stylesheet: colour,
+            type, radius, shadow, component slots and the grid itself.
           </p>
         </header>
 
@@ -48,20 +55,23 @@ export function ZenCanvas() {
           <Card data-zen-card>
             <CardHeader>
               <CardDescription>Manifesto</CardDescription>
-              <CardTitle className="text-2xl">Structure is a promise, style is a conversation</CardTitle>
+              <CardTitle className="text-2xl">
+                Structure is a promise, style is a conversation
+              </CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col gap-4 leading-relaxed">
               <p>
-                In 2003 a handful of designers proved that one HTML document could wear a thousand faces. Today our
-                documents are component trees, yet the promise still holds: the markup says what things are, and the
-                stylesheet decides how they feel.
+                In 2003 a handful of designers proved that one HTML document could wear a thousand
+                faces. Today our documents are component trees, yet the promise still holds: the
+                markup says what things are, and the stylesheet decides how they feel.
               </p>
               <blockquote data-zen-quote>
                 Make the content stable and the presentation fearless.
               </blockquote>
               <p>
-                Semantic data attributes give every theme a handle on the hero, the essay, the controls and the sidebar,
-                while shadcn slots expose each primitive for deep restyling.
+                Semantic data attributes give every theme a handle on the hero, the essay, the
+                controls and the sidebar, while shadcn slots expose each primitive for deep
+                restyling.
               </p>
             </CardContent>
             <CardFooter className="flex-wrap gap-3">

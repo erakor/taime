@@ -107,10 +107,18 @@
     'sidebar';
 }
 
-[data-zen-area='hero'] { grid-area: hero; }
-[data-zen-area='essay'] { grid-area: essay; }
-[data-zen-area='controls'] { grid-area: controls; }
-[data-zen-area='sidebar'] { grid-area: sidebar; }
+[data-zen-area='hero'] {
+  grid-area: hero;
+}
+[data-zen-area='essay'] {
+  grid-area: essay;
+}
+[data-zen-area='controls'] {
+  grid-area: controls;
+}
+[data-zen-area='sidebar'] {
+  grid-area: sidebar;
+}
 
 @media (min-width: 64rem) {
   [data-zen-stage] {

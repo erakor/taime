@@ -34,7 +34,9 @@
   border-bottom: 1px solid var(--foreground);
   padding-block: 2.5rem;
 }
-[data-zen-theme='editorial'] [data-zen-subtitle] { font-style: italic; }
+[data-zen-theme='editorial'] [data-zen-subtitle] {
+  font-style: italic;
+}
 [data-zen-theme='editorial'] [data-zen-quote] {
   border-left: 0;
   border-block: 1px solid var(--foreground);
@@ -42,7 +44,10 @@
   text-align: center;
   font-size: 1.5rem;
 }
-[data-zen-theme='editorial'] [data-zen-area='essay'] [data-slot='card-content'] > p:first-child::first-letter {
+[data-zen-theme='editorial']
+  [data-zen-area='essay']
+  [data-slot='card-content']
+  > p:first-child::first-letter {
   float: left;
   font-family: var(--font-display);
   font-size: 4rem;
@@ -58,7 +63,10 @@
   box-shadow: none;
   padding-top: 1rem;
 }
-[data-zen-theme='editorial'] [data-slot='card-title'] { font-family: var(--font-display); font-weight: 700; }
+[data-zen-theme='editorial'] [data-slot='card-title'] {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
 [data-zen-theme='editorial'] [data-slot='card-description'] {
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -100,7 +108,9 @@
   border-bottom: 2px solid var(--primary);
 }
 [data-zen-theme='editorial'] [data-slot='switch'],
-[data-zen-theme='editorial'] [data-slot='switch-thumb'] { border-radius: 0; }
+[data-zen-theme='editorial'] [data-slot='switch-thumb'] {
+  border-radius: 0;
+}
 
 @media (min-width: 64rem) {
   [data-zen-theme='editorial'] [data-zen-stage] {

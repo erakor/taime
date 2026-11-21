@@ -18,10 +18,26 @@ export interface ZenTheme {
 }
 
 export const ZEN_THEMES = {
-  default: { id: 'default', label: 'Paper (default)', description: 'Base tokens and default grid.' },
-  editorial: { id: 'editorial', label: 'Editorial', description: 'Warm broadsheet with serif type and hairline rules.' },
-  'neo-brutalist': { id: 'neo-brutalist', label: 'Neo-brutalist', description: 'Hard offset shadows, monospace, sidebar on the left.' },
-  'cyber-glass': { id: 'cyber-glass', label: 'Cyber glass', description: 'Dark glow with frosted translucent cards.' },
+  default: {
+    id: 'default',
+    label: 'Paper (default)',
+    description: 'Base tokens and default grid.',
+  },
+  editorial: {
+    id: 'editorial',
+    label: 'Editorial',
+    description: 'Warm broadsheet with serif type and hairline rules.',
+  },
+  'neo-brutalist': {
+    id: 'neo-brutalist',
+    label: 'Neo-brutalist',
+    description: 'Hard offset shadows, monospace, sidebar on the left.',
+  },
+  'cyber-glass': {
+    id: 'cyber-glass',
+    label: 'Cyber glass',
+    description: 'Dark glow with frosted translucent cards.',
+  },
 } as const satisfies Record<string, ZenTheme>
 
 export type ZenThemeId = keyof typeof ZEN_THEMES

@@ -23,30 +23,7 @@
 
   --font-body: 'EB Garamond', Georgia, serif;
   --font-display: 'Cinzel', Georgia, serif;
-}
 
-[data-zen-theme='wizarding-ledger'] [data-zen-root] {
-  background-image:
-    radial-gradient(ellipse at 50% 0%, oklch(0.68 0.14 72 / 0.14), transparent 60%),
-    radial-gradient(circle at 85% 20%, oklch(0.45 0.15 25 / 0.12), transparent 45%);
-}
-
-[data-zen-theme='wizarding-ledger'] [data-zen-title],
-[data-zen-theme='wizarding-ledger'] [data-slot='card-title'] {
-  font-family: var(--font-display);
-  letter-spacing: 0.04em;
-}
-
-/* Gilded double border on cards. */
-[data-zen-theme='wizarding-ledger'] [data-slot='card'] {
-  border-color: var(--border);
-  box-shadow:
-    inset 0 0 0 1px oklch(0.74 0.14 78 / 0.25),
-    0 12px 28px oklch(0.06 0.02 265 / 0.55);
-}
-
-[data-zen-theme='wizarding-ledger'] [data-zen-quote] {
-  border-left-color: var(--primary);
-  color: oklch(0.86 0.06 80);
-  font-size: 1.05rem;
+  --shadow-sm: inset 0 0 0 1px oklch(0.74 0.14 78 / 0.25), 0 12px 28px oklch(0.06 0.02 265 / 0.55);
+  --zen-shadow: var(--shadow-sm);
 }

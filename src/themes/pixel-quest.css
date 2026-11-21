@@ -23,35 +23,10 @@
 
   --font-body: 'VT323', ui-monospace, monospace;
   --font-display: 'Press Start 2P', ui-monospace, monospace;
-  --zen-title-size: clamp(1.35rem, 3vw, 2.25rem);
-  --zen-title-weight: 400;
-  --zen-title-tracking: 0;
-}
 
-[data-zen-theme='pixel-quest'] [data-zen-root] {
-  font-size: 1.15rem;
-}
-
-[data-zen-theme='pixel-quest'] [data-zen-title] {
-  font-family: var(--font-display);
-  line-height: 1.45;
-  text-shadow: 4px 4px 0 oklch(0.1 0.02 250);
-}
-
-[data-zen-theme='pixel-quest'] [data-slot='card-title'] {
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  line-height: 1.5;
-}
-
-/* Pixel frame and hard drop shadow. */
-[data-zen-theme='pixel-quest'] [data-slot='card'],
-[data-zen-theme='pixel-quest'] [data-slot='button'] {
-  border: 3px solid var(--border);
-  box-shadow:
-    inset -3px -3px 0 oklch(0.12 0.02 250 / 0.7),
-    inset 3px 3px 0 oklch(1 0 0 / 0.15),
-    4px 4px 0 oklch(0.08 0.02 250);
+  --shadow-xs: 3px 3px 0 0 oklch(0.08 0.02 250);
+  --shadow-sm: 4px 4px 0 0 oklch(0.08 0.02 250);
+  --zen-shadow: var(--shadow-sm);
 }
 
 /* Quest log: sidebar becomes a right-hand status panel, controls above essay. */
@@ -62,6 +37,5 @@
       'hero     sidebar'
       'controls sidebar'
       'essay    sidebar';
-    align-items: start;
   }
 }

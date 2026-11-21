@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+
+/* Pixel quest: 16-bit RPG UI, hard stepped shadows, quest-log layout. */
+:root[data-zen-theme='pixel-quest'],
+[data-zen-theme='pixel-quest'] {
+  color-scheme: dark;
+  --background: oklch(0.18 0.03 250);
+  --foreground: oklch(0.96 0.01 95);
+  --card: oklch(0.23 0.03 250);
+  --card-foreground: oklch(0.96 0.01 95);
+  --primary: oklch(0.78 0.19 145);
+  --primary-foreground: oklch(0.14 0.03 250);
+  --secondary: oklch(0.76 0.16 85);
+  --secondary-foreground: oklch(0.14 0.03 250);
+  --muted: oklch(0.28 0.03 250);
+  --muted-foreground: oklch(0.74 0.02 240);
+  --accent: oklch(0.68 0.19 210);
+  --accent-foreground: oklch(0.14 0.03 250);
+  --border: oklch(0.96 0.01 95);
+  --input: oklch(0.96 0.01 95);
+  --ring: oklch(0.78 0.19 145);
+  --radius: 0px;
+
+  --font-body: 'VT323', ui-monospace, monospace;
+  --font-display: 'Press Start 2P', ui-monospace, monospace;
+  --zen-title-size: clamp(1.35rem, 3vw, 2.25rem);
+  --zen-title-weight: 400;
+  --zen-title-tracking: 0;
+
+  --shadow-xs: 3px 3px 0 0 oklch(0.08 0.02 250);
+  --shadow-sm: 4px 4px 0 0 oklch(0.08 0.02 250);
+  --zen-shadow: var(--shadow-sm);
+}
+
+/* Quest log: sidebar becomes a right-hand status panel, controls above essay. */
+@media (min-width: 64rem) {
+  [data-zen-theme='pixel-quest'] [data-zen-stage] {
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    grid-template-areas:
+      'hero     sidebar'
+      'controls sidebar'
+      'essay    sidebar';
+  }
+}

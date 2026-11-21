@@ -23,6 +23,9 @@
 
   --font-body: 'VT323', ui-monospace, monospace;
   --font-display: 'Press Start 2P', ui-monospace, monospace;
+  --zen-title-size: clamp(1.35rem, 3vw, 2.25rem);
+  --zen-title-weight: 400;
+  --zen-title-tracking: 0;
 
   --shadow-xs: 3px 3px 0 0 oklch(0.08 0.02 250);
   --shadow-sm: 4px 4px 0 0 oklch(0.08 0.02 250);

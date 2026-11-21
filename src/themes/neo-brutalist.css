@@ -1,0 +1,128 @@
+/* Neo-brutalist: hard shadows, thick borders, mono type, sidebar on the left. */
+:root[data-zen-theme='neo-brutalist'],
+[data-zen-theme='neo-brutalist'] {
+  --radius: 0px;
+  --background: oklch(0.96 0.08 100);
+  --foreground: oklch(0.12 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.12 0 0);
+  --primary: oklch(0.68 0.25 25);
+  --primary-foreground: oklch(0.12 0 0);
+  --secondary: oklch(0.85 0.17 195);
+  --secondary-foreground: oklch(0.12 0 0);
+  --muted: oklch(0.92 0.06 100);
+  --muted-foreground: oklch(0.3 0 0);
+  --accent: oklch(0.82 0.2 330);
+  --accent-foreground: oklch(0.12 0 0);
+  --border: oklch(0.12 0 0);
+  --input: oklch(0.12 0 0);
+  --ring: oklch(0.12 0 0);
+
+  --font-body: ui-monospace, 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+  --font-display: var(--font-body);
+  --zen-shadow: 5px 5px 0 0 oklch(0.12 0 0);
+  --zen-title-size: clamp(2.25rem, 6vw, 4.25rem);
+  --zen-title-weight: 900;
+  --zen-title-tracking: -0.05em;
+  --zen-gap: 2rem;
+}
+
+[data-zen-theme='neo-brutalist'] [data-zen-area='hero'] {
+  background: var(--secondary);
+  border: 3px solid var(--foreground);
+  box-shadow: 8px 8px 0 0 var(--foreground);
+  padding: 2rem;
+}
+[data-zen-theme='neo-brutalist'] [data-zen-title] { text-transform: uppercase; }
+[data-zen-theme='neo-brutalist'] [data-zen-subtitle] { color: var(--foreground); font-weight: 500; }
+[data-zen-theme='neo-brutalist'] [data-zen-quote] {
+  background: var(--accent);
+  border: 3px solid var(--foreground);
+  padding: 1rem;
+  font-style: normal;
+  font-weight: 700;
+}
+
+[data-zen-theme='neo-brutalist'] [data-slot='card'] {
+  border: 3px solid var(--foreground);
+  box-shadow: 5px 5px 0 0 var(--foreground);
+}
+[data-zen-theme='neo-brutalist'] [data-zen-area='sidebar'] [data-slot='card'] { background: var(--muted); }
+[data-zen-theme='neo-brutalist'] [data-slot='card-title'] { text-transform: uppercase; font-weight: 900; }
+
+[data-zen-theme='neo-brutalist'] [data-slot='button'] {
+  border: 3px solid var(--foreground);
+  box-shadow: 4px 4px 0 0 var(--foreground);
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: transform 80ms, box-shadow 80ms;
+}
+[data-zen-theme='neo-brutalist'] [data-slot='button']:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 var(--foreground);
+  filter: none;
+}
+[data-zen-theme='neo-brutalist'] [data-slot='button']:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 0 var(--foreground);
+}
+[data-zen-theme='neo-brutalist'] [data-slot='button'][data-variant='outline'] { background: var(--card); }
+[data-zen-theme='neo-brutalist'] [data-slot='button'][data-variant='ghost'] { border-style: dashed; box-shadow: none; }
+
+[data-zen-theme='neo-brutalist'] [data-slot='badge'] {
+  border: 2px solid var(--foreground);
+  box-shadow: 2px 2px 0 0 var(--foreground);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+[data-zen-theme='neo-brutalist'] [data-slot='input'] {
+  border: 3px solid var(--foreground);
+  background: var(--card);
+  box-shadow: 3px 3px 0 0 var(--foreground);
+}
+[data-zen-theme='neo-brutalist'] [data-slot='tabs-list'] {
+  background: transparent;
+  border: 3px solid var(--foreground);
+  padding: 0;
+  gap: 0;
+  height: auto;
+}
+[data-zen-theme='neo-brutalist'] [data-slot='tabs-trigger'] {
+  border-radius: 0;
+  height: auto;
+  padding-block: 0.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+[data-zen-theme='neo-brutalist'] [data-slot='tabs-trigger'] + [data-slot='tabs-trigger'] { border-left: 3px solid var(--foreground); }
+[data-zen-theme='neo-brutalist'] [data-slot='tabs-trigger'][data-state='active'] {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: none;
+}
+[data-zen-theme='neo-brutalist'] [data-slot='switch'] {
+  height: 1.75rem;
+  width: 3.25rem;
+  border: 3px solid var(--foreground);
+  border-radius: 0;
+  box-shadow: 3px 3px 0 0 var(--foreground);
+}
+[data-zen-theme='neo-brutalist'] [data-slot='switch'][data-state='checked'] { background: var(--secondary); }
+[data-zen-theme='neo-brutalist'] [data-slot='switch-thumb'] {
+  border-radius: 0;
+  background: var(--foreground);
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+/* Choreography: sidebar moves to the left, controls rise above the essay. */
+@media (min-width: 64rem) {
+  [data-zen-theme='neo-brutalist'] [data-zen-stage] {
+    grid-template-columns: 18rem minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      'sidebar hero hero'
+      'sidebar controls essay'
+      'sidebar controls essay';
+    align-items: start;
+  }
+}

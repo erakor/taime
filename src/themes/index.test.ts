@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs'
+import postcss, { type AtRule } from 'postcss'
 import { describe, expect, it } from 'vitest'
 
 import { ZEN_THEMES, resolveTheme } from '.'
@@ -16,13 +17,22 @@ describe('ZEN_THEMES', () => {
     expect(new Set(labels).size).toBe(labels.length)
   })
 
-  it.each(themes.filter(([id]) => id !== 'default'))(
-    '%s: is imported and scoped to its data-zen-theme',
-    (id) => {
+  describe.each(themes.filter(([id]) => id !== 'default'))('%s', (id) => {
+    it('is imported by the manifest', () => {
       expect(read('./index.ts')).toContain(`import './${id}.css'`)
-      expect(read(`./${id}.css`)).toMatch(new RegExp(`\\[data-zen-theme=(['"])${id}\\1\\]`))
-    },
-  )
+    })
+
+    it('scopes every selector to its data-zen-theme', () => {
+      const scope = new RegExp(`^(:root)?\\[data-zen-theme=(['"])${id}\\2\\]`)
+      const unscoped: string[] = []
+      postcss.parse(read(`./${id}.css`)).walkRules((rule) => {
+        const parent = rule.parent
+        if (parent?.type === 'atrule' && (parent as AtRule).name.endsWith('keyframes')) return
+        unscoped.push(...rule.selectors.filter((selector) => !scope.test(selector)))
+      })
+      expect(unscoped).toEqual([])
+    })
+  })
 })
 
 describe('resolveTheme', () => {

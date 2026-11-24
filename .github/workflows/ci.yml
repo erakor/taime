@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Shared erakor checks: typecheck, lint, format (and knip/test once the package defines them).
+  # Shared erakor checks (see node-checks.yml for what runs).
   checks:
     uses: erakor/toolchain/.github/workflows/node-checks.yml@a43487e76663bd84ede121057887848f69e6016d # v1.4.0
 
@@ -33,8 +33,9 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      # vite only: the checks job already runs the type check.
       - name: Build app
-        run: pnpm run build
+        run: pnpm exec vite build
 
       - name: Build Storybook
         if: ${{ !cancelled() }}

@@ -60,6 +60,9 @@ export const ZEN_THEMES = {
 
 export type ZenThemeId = keyof typeof ZEN_THEMES
 
-export const ZEN_THEME_LABELS: Record<string, string> = Object.fromEntries(
-  Object.values(ZEN_THEMES).map((t) => [t.id, t.label]),
-)
+/** The theme named by a `?theme=` value, falling back to the default for anything unknown. */
+export function resolveTheme(requested: string | null): ZenThemeId {
+  return requested !== null && Object.hasOwn(ZEN_THEMES, requested)
+    ? (requested as ZenThemeId)
+    : 'default'
+}

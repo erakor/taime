@@ -1,8 +1,7 @@
 {
-  "extends": "@erakor/toolchain/tsconfig/base.json",
+  "extends": "@erakor/toolchain/tsconfig/node.json",
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-    "types": ["node"]
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo"
   },
   "include": ["vite.config.ts"]
 }

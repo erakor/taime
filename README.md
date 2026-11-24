@@ -3,6 +3,7 @@
 One immutable React tree (`src/components/ZenCanvas.tsx`), infinite looks via CSS only.
 
 - `pnpm storybook` then use the paintbrush toolbar to switch themes.
+- `pnpm test:storybook` builds Storybook and checks that every story renders (CI runs the same).
 - `pnpm dev` then open `/?theme=editorial` (or `neo-brutalist`, `cyber-glass`, `ligne-claire`, `wizarding-ledger`, `pixel-quest`).
 
 ## Add a theme (no JSX edits)

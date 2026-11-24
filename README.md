@@ -14,6 +14,6 @@ One immutable React tree (`src/components/ZenCanvas.tsx`), infinite looks via CS
 
 ## Checks
 
-`pnpm typecheck && pnpm lint && pnpm format:check && pnpm knip && pnpm test`, the same scripts CI
-runs through `erakor/toolchain`'s `node-checks.yml`. Knip skips unused exports in
-`src/components/ui` (vendored shadcn components export more than the app uses).
+`pnpm typecheck && pnpm lint && pnpm format:check && pnpm knip && pnpm test`, the scripts CI
+runs through `erakor/toolchain`'s `node-checks.yml`. Lint, format, knip and TypeScript settings
+come from the toolchain; change them there, not here.

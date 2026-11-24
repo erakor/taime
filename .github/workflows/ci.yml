@@ -8,18 +8,16 @@ on:
 permissions:
   contents: read
 
-# A newer push to a PR replaces the older run; every commit on main keeps its own result.
 concurrency:
   group: ci-${{ github.event_name == 'pull_request' && github.ref || github.sha }}
   cancel-in-progress: true
 
 jobs:
-  # Shared erakor checks (see node-checks.yml for what runs).
   checks:
-    uses: erakor/toolchain/.github/workflows/node-checks.yml@a43487e76663bd84ede121057887848f69e6016d # v1.4.0
+    uses: erakor/toolchain/.github/workflows/node-checks.yml@3399bda01c72bf68408a4103dcdfbda19bb463b1 # v1.5.0 once tagged
 
-  # Repo-specific: the app and Storybook must still build.
-  build:
+  # Repo-specific: Storybook is how the themes are reviewed, so it must build.
+  storybook:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
@@ -34,10 +32,4 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      # vite only: the checks job already runs the type check.
-      - name: Build app
-        run: pnpm exec vite build
-
-      - name: Build Storybook
-        if: ${{ !cancelled() }}
-        run: pnpm run build-storybook
+      - run: pnpm run build-storybook

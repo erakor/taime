@@ -1,7 +1,2 @@
 allowBuilds:
   esbuild: false
-
-overrides:
-  # Storybook's docgen plugin asks for glob 13, which has open advisories (glob, minimatch).
-  # glob 14 keeps the same globSync API. Drop this once @storybook/react-vite moves past it.
-  'glob@13': ^14.0.2

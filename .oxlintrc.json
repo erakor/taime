@@ -1,3 +1,6 @@
 {
-  "extends": ["./node_modules/@erakor/toolchain/oxlint/react.json"]
+  "extends": [
+    "./node_modules/@erakor/toolchain/oxlint/react.json",
+    "./node_modules/@erakor/toolchain/oxlint/shadcn.json"
+  ]
 }

@@ -43,7 +43,7 @@
     "zod": "^4.6.7"
   },
   "devDependencies": {
-    "@erakor/toolchain": "github:erakor/toolchain#3399bda01c72bf68408a4103dcdfbda19bb463b1",
+    "@erakor/toolchain": "github:erakor/toolchain#663c1012b0041f3dbc149b2eab05cd3e214a720b",
     "@storybook/addon-themes": "^10.6.8",
     "@storybook/react-vite": "^10.6.8",
     "@types/node": "^26.6.6",

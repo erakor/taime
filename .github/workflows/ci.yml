@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   checks:
-    uses: erakor/toolchain/.github/workflows/node-checks.yml@3399bda01c72bf68408a4103dcdfbda19bb463b1 # v1.5.0 once tagged
+    uses: erakor/toolchain/.github/workflows/node-checks.yml@663c1012b0041f3dbc149b2eab05cd3e214a720b # v1.5.0 once tagged
 
   # Repo-specific: Storybook is how the themes are reviewed, so it must build.
   storybook:

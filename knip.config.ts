@@ -1,1 +1,1 @@
-export { default } from '@erakor/toolchain/knip'
+export { default } from '@erakor/toolchain/knip/shadcn'

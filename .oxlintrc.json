@@ -1,6 +1,7 @@
 {
   "extends": [
     "./node_modules/@erakor/toolchain/oxlint/react.json",
-    "./node_modules/@erakor/toolchain/oxlint/shadcn.json"
+    "./node_modules/@erakor/toolchain/oxlint/shadcn.json",
+    "./node_modules/@erakor/toolchain/oxlint/storybook.json"
   ]
 }

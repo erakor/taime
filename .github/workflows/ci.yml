@@ -14,22 +14,8 @@ concurrency:
 
 jobs:
   checks:
-    uses: erakor/toolchain/.github/workflows/node-checks.yml@663c1012b0041f3dbc149b2eab05cd3e214a720b # v1.5.0 once tagged
+    uses: erakor/toolchain/.github/workflows/node-checks.yml@1c7c1111a17a5b01999b98616554611d605b7339 # v1.5.0 once tagged
 
-  # Repo-specific: Storybook is how the themes are reviewed, so it must build.
+  # Storybook is how the themes are reviewed: it must build, and every story must render.
   storybook:
-    runs-on: ubuntu-24.04
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-
-      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6
-
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
-        with:
-          node-version-file: .nvmrc
-          cache: pnpm
-
-      - run: pnpm install --frozen-lockfile
-
-      - run: pnpm run build-storybook
+    uses: erakor/toolchain/.github/workflows/storybook-checks.yml@1c7c1111a17a5b01999b98616554611d605b7339 # v1.5.0 once tagged

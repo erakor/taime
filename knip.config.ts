@@ -1,6 +1,6 @@
 import shadcn from '@erakor/toolchain/knip/shadcn'
+import storybook from '@erakor/toolchain/knip/storybook'
 
-// playwright is used by erakor-storybook-smoke (from the toolchain), which knip cannot follow.
-const config = { ...shadcn, ignoreDependencies: ['playwright'] }
+const config = { ...shadcn, ...storybook }
 
 export default config
